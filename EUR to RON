@@ -1,0 +1,21 @@
+from forex_python.converter import CurrencyRates
+
+def convert_currency(amount, from_currency, to_currency):
+    """
+    Convert an amount from one currency to another using the forex-python library.
+    """
+    # Initialize the CurrencyRates object
+    currency_rates = CurrencyRates()
+
+    # Convert the amount from the from_currency to the to_currency
+    converted_amount = currency_rates.convert(from_currency, to_currency, amount)
+
+    # Return the converted amount
+    return converted_amount
+
+# Test the function
+amount = 100
+from_currency = 'EUR'
+to_currency = 'RON'
+converted_amount = convert_currency(amount, from_currency, to_currency)
+print(f'{amount} {from_currency} is equal to {converted_amount} {to_currency}')
